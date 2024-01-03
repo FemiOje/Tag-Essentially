@@ -1,5 +1,11 @@
 1. Player Character:
 	Character Pack: Free Sample
-	https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870
+	Asset Store: https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870
 
-2.
+2.Zombie Asset:
+	Zombie by Pxltiger
+	Asset Store: https://assetstore.unity.com/packages/3d/characters/humanoids/zombie-30232
+
+3. Level Generator:
+	Autolevel by AlAsl
+	Asset Store: https://assetstore.unity.com/packages/tools/level-design/autolevel-236041
