@@ -3,34 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : Enemy, IDamageable
+public class Zombie : Enemy
 {
-    public int Health { get; set; }
-    protected override void Attack()
+    private void OnCollisionEnter(Collision other)
     {
-        base.Attack();
-        Debug.Log("Zombie: Attacking");
+        Debug.Log("Collision with zombie");
+        if (other.gameObject.GetComponent<Projectile>())
+        {
+            Debug.Log("Collision with bullet");
+            TakeDamage(damagePoints);
+            Destroy(other.gameObject);
+
+            if (health <= 0){
+                Destroy(gameObject);
+            }
+        }
     }
     protected override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(damagePoints);
-            Debug.Log($"Zombie has taken hit. Zombie health: {health}");
-        }
-    }
-
-    // private void OnCollisionEnter(Collision obj)
-    // {
-
-    //     if (obj.TryGetComponent(out IDamageable hit))
-    //     {
-    //         hit.Damage();
-    //     }
-    // }
-
-    public void Damage()
-    {
-        Health--;
+        
     }
 }

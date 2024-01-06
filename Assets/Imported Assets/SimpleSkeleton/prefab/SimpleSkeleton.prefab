@@ -1611,6 +1611,8 @@ GameObject:
   - component: {fileID: 6102759760180775707}
   - component: {fileID: 4196044692951606881}
   - component: {fileID: 3911570007117519508}
+  - component: {fileID: 42364110}
+  - component: {fileID: 42364106}
   m_Layer: 0
   m_Name: SimpleSkeleton
   m_TagString: Untagged
@@ -1669,6 +1671,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3cb8225a5113a439aa17f10f072fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &42364110
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127512057113049352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.5442858, z: 1}
+  m_Center: {x: 0, y: 0.91536665, z: 0}
+--- !u!114 &42364106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7127512057113049352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d87465060375d46af19111c4f1913d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
+  speed: 15
+  damagePoints: 4
 --- !u!1 &7303256038222954820
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skeleton : Enemy, IDamageable
+public class Skeleton : Enemy
 {
-    public int Health { get; set; }
-    protected override void Attack()
-    {
-        base.Attack();
-        Debug.Log("Skeleton: Attacking");
-    }
+    // public int Health { get; set; }
+    // public int Speed { get; set; }
+    // public int DamagePoints { get; set; }
 
-    protected override void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
+    private void OnCollisionEnter(Collision other) {
+        Debug.Log("Collision with skeleton");
+        if (other.gameObject.GetComponent<Projectile>()){
             TakeDamage(damagePoints);
-            Debug.Log($"Skeleton has taken hit. Skeleton health: {health}");
+            Destroy(other.gameObject);
+            
+            if (health <= 0){
+                Destroy(gameObject);
+            }
         }
     }
 
-    public void Damage()
+    protected override void Update()
     {
 
     }

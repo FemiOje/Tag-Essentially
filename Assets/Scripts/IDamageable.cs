@@ -5,6 +5,8 @@ using UnityEngine;
 public interface IDamageable
 {
     int Health{get; set;}
+    int Speed{get; set;}
+    int DamagePoints{get; set;}
 
-    void Damage();
+    void TakeDamage(int damagePoints);
 }
