@@ -13,3 +13,7 @@
 4. UI:
 	2D Casual UI HD bby MiMU STUDIO
 	Website: https://mimustudio.com/
+
+5. Skeleton Asset:
+	Simple Skeleton by PRIZMA
+	Asset Store: https://assetstore.unity.com/packages/3d/characters/humanoids/simple-skeleton-158811
