@@ -9,12 +9,11 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        // transform.position += player.position *  10.0f * Time.deltaTime;
         MoveForward();
     }
 
     void MoveForward()
     {
-        transform.Translate(Vector3.forward * 10.0f * Time.deltaTime);
+        transform.Translate(player.forward * 10.0f * Time.deltaTime);
     }
 }

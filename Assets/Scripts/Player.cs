@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,12 +15,19 @@ public class Player : MonoBehaviour
         playerInputActions = new InputActionAsset();
         playerInputActions.Enable();
     }
+
     public void Shoot(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            // add offset to instantiation prefab to avoid adding unncecessary force to player
-            Instantiate(projectile, transform.position + instantiationOffset, transform.rotation);
+            // Calculate the forward direction of the player
+            Vector3 playerForward = transform.forward;
+
+            // Adjust the instantiation offset based on player's forward direction
+            Vector3 adjustedOffset = playerForward * instantiationOffset.z;
+
+            // Instantiate the projectile with the adjusted offset
+            Instantiate(projectile, transform.position + adjustedOffset, transform.rotation);
         }
     }
 }
