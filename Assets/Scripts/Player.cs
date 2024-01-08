@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] public int speed;
     [SerializeField] public int damagePoints;
+    private Vector3 instantiationOffset = new Vector3(0,0,2);
 
     private void Awake()
     {
@@ -21,7 +22,8 @@ public class Player : MonoBehaviour
     {
         if (context.performed)
         {
-            Instantiate(projectile, transform.position, transform.rotation);
+            // add offset to instantiation prefab to avoid adding unncecessary force to player
+            Instantiate(projectile, transform.position + instantiationOffset, transform.rotation);
         }
     }
 }

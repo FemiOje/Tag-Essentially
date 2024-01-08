@@ -14,6 +14,9 @@
 	2D Casual UI HD bby MiMU STUDIO
 	Website: https://mimustudio.com/
 
+	OnScreen Controls by KenneyNL
+	Website: 
+	https://www.kenney.nl/assets/onscreen-controls
 5. Skeleton Asset:
 	Simple Skeleton by PRIZMA
 	Asset Store: https://assetstore.unity.com/packages/3d/characters/humanoids/simple-skeleton-158811

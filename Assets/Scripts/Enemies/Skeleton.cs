@@ -9,7 +9,6 @@ public class Skeleton : Enemy
     // public int DamagePoints { get; set; }
 
     private void OnCollisionEnter(Collision other) {
-        Debug.Log("Collision with skeleton");
         if (other.gameObject.GetComponent<Projectile>()){
             TakeDamage(damagePoints);
             Destroy(other.gameObject);
