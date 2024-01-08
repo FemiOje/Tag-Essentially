@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] public int speed;
     [SerializeField] public int damagePoints;
-    private Vector3 instantiationOffset = new Vector3(0,0,2);
+    private Vector3 instantiationOffset = new Vector3(0.0f, 0.0f, 0.5f);
 
     private void Awake()
     {
