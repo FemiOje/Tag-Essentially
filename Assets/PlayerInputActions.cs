@@ -254,17 +254,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9d60e268-07c2-41c7-afb9-681c26531f73"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Fire"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""fd5168c8-2519-4f67-aeb3-89360928f299"",
                     ""path"": ""<Joystick>/trigger"",
                     ""interactions"": """",
@@ -322,17 +311,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""4d1d48ac-1f49-4c06-9506-564057172d6a"",
                     ""path"": ""<Gamepad>/leftStickPress"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""0dfcbf93-7ff6-4551-80d7-a3e943a28810"",
-                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
