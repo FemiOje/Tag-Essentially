@@ -16,7 +16,51 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         Direct
     }
 
-    private PlayerInputActions playerActions;
+    [SerializeField] private float sensitivity = 2.0f;
+
+    private PlayerInputActions playerInputActions;
+    private Vector2 lookInput;
+    private Vector3 instantiationOffset = new Vector3(0.0f, 0.0f, 0.5f);
+    [SerializeField] GameObject projectile;
+
+
+
+    private void Awake()
+    {
+        playerInputActions = new PlayerInputActions();
+        //playerActions = new PlayerInputActions();
+        if (!m_animator) { gameObject.GetComponent<Animator>(); }
+        if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
+
+    }
+
+    private void OnEnable()
+    {
+        playerInputActions.Player.Enable();
+        playerInputActions.Player.Look.performed += OnLookPerformed;
+        playerInputActions.Player.Look.canceled += OnLookCanceled;
+        playerInputActions.Player.Fire.performed += OnFirePerformed;
+    }
+
+    private void OnDisable()
+    {
+        playerInputActions.Player.Disable();
+        playerInputActions.Player.Look.performed -= OnLookPerformed;
+        playerInputActions.Player.Look.canceled -= OnLookCanceled;
+        playerInputActions.Player.Fire.performed -= OnFirePerformed;
+    }
+
+    private void OnLookPerformed(InputAction.CallbackContext context)
+    {
+        lookInput = context.ReadValue<Vector2>();
+    }
+
+    private void OnLookCanceled(InputAction.CallbackContext context)
+    {
+        lookInput = Vector2.zero;
+    }
+
+    //private PlayerInputActions playerActions;
     [SerializeField] private float m_moveSpeed = 2;
     [SerializeField] private float m_turnSpeed = 200;
     [SerializeField] private float m_jumpForce = 4;
@@ -47,25 +91,6 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     float horizontalInput;
 
     private List<Collider> m_collisions = new List<Collider>();
-
-    private void Awake()
-    {
-        if (!m_animator) { gameObject.GetComponent<Animator>(); }
-        if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
-
-        playerActions = new PlayerInputActions();
-    }
-
-    private void OnEnable()
-    {
-        playerActions.Player.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerActions.Player.Disable();
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         ContactPoint[] contactPoints = collision.contacts;
@@ -123,14 +148,15 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private void Update()
     {
-        movementInput = playerActions.Player.Move.ReadValue<Vector2>();
+        movementInput = playerInputActions.Player.Move.ReadValue<Vector2>();
         verticalInput = movementInput.y;
         horizontalInput = movementInput.x;
 
-        if (!m_jumpInput && playerActions.Player.Jump.triggered)
+        if (!m_jumpInput && playerInputActions.Player.Jump.triggered)
         {
             m_jumpInput = true;
         }
+        Look();
     }
 
     private void FixedUpdate()
@@ -234,6 +260,35 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         if (!m_isGrounded && m_wasGrounded)
         {
             m_animator.SetTrigger("Jump");
+        }
+    }
+    private void Look()
+    {
+        float mouseX = lookInput.x * sensitivity;
+        float mouseY = lookInput.y * sensitivity;
+
+        // Apply rotation based on input
+        transform.Rotate(Vector3.up, mouseX);
+        transform.Rotate(Vector3.left, mouseY);
+
+        // Clamp vertical rotation to prevent flipping
+        Vector3 currentRotation = transform.eulerAngles;
+        currentRotation.x = Mathf.Clamp(currentRotation.x, 0f, 0f);
+        transform.eulerAngles = currentRotation;
+    }
+
+       public void OnFirePerformed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            // Calculate the forward direction of the player
+            Vector3 playerForward = transform.forward;
+
+            // Adjust the instantiation offset based on player's forward direction
+            Vector3 adjustedOffset = playerForward * instantiationOffset.z;
+
+            // Instantiate the projectile with the adjusted offset
+            Instantiate(projectile, transform.position + adjustedOffset, transform.rotation);
         }
     }
 }
