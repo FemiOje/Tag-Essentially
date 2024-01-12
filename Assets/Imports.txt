@@ -6,7 +6,7 @@
 	Zombie by Pxltiger
 	Asset Store: https://assetstore.unity.com/packages/3d/characters/humanoids/zombie-30232
 
-3. Level Generator:
+3*. Level Generator*:
 	Autolevel by AlAsl
 	Asset Store: https://assetstore.unity.com/packages/tools/level-design/autolevel-236041
 
@@ -17,6 +17,11 @@
 	OnScreen Controls by KenneyNL
 	Website: 
 	https://www.kenney.nl/assets/onscreen-controls
+
 5. Skeleton Asset:
 	Simple Skeleton by PRIZMA
 	Asset Store: https://assetstore.unity.com/packages/3d/characters/humanoids/simple-skeleton-158811
+
+6. Level Design:
+	Low Poly FPS Map Lite by JustCreate
+	Asset Store: https://assetstore.unity.com/packages/3d/environments/low-poly-fps-map-lite-258453
