@@ -19,7 +19,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     [SerializeField] private float sensitivity = 2.0f;
 
     private PlayerInputActions playerInputActions;
-    private Vector2 lookInput;
+    //private Vector2 lookInput;
     private Vector3 instantiationOffset = new Vector3(0.0f, 0.0f, 0.5f);
     [SerializeField] GameObject projectile;
 
@@ -37,28 +37,28 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     private void OnEnable()
     {
         playerInputActions.Player.Enable();
-        playerInputActions.Player.Look.performed += OnLookPerformed;
-        playerInputActions.Player.Look.canceled += OnLookCanceled;
+        //playerInputActions.Player.Look.performed += OnLookPerformed;
+        //playerInputActions.Player.Look.canceled += OnLookCanceled;
         playerInputActions.Player.Fire.performed += OnFirePerformed;
     }
 
     private void OnDisable()
     {
         playerInputActions.Player.Disable();
-        playerInputActions.Player.Look.performed -= OnLookPerformed;
-        playerInputActions.Player.Look.canceled -= OnLookCanceled;
+        //playerInputActions.Player.Look.performed -= OnLookPerformed;
+        //playerInputActions.Player.Look.canceled -= OnLookCanceled;
         playerInputActions.Player.Fire.performed -= OnFirePerformed;
     }
 
-    private void OnLookPerformed(InputAction.CallbackContext context)
-    {
-        lookInput = context.ReadValue<Vector2>();
-    }
+    // private void OnLookPerformed(InputAction.CallbackContext context)
+    // {
+    //     lookInput = context.ReadValue<Vector2>();
+    // }
 
-    private void OnLookCanceled(InputAction.CallbackContext context)
-    {
-        lookInput = Vector2.zero;
-    }
+    // private void OnLookCanceled(InputAction.CallbackContext context)
+    // {
+    //     lookInput = Vector2.zero;
+    // }
 
     //private PlayerInputActions playerActions;
     [SerializeField] private float m_moveSpeed = 2;
@@ -156,7 +156,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         {
             m_jumpInput = true;
         }
-        Look();
+        // Look();
     }
 
     private void FixedUpdate()
@@ -262,20 +262,20 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             m_animator.SetTrigger("Jump");
         }
     }
-    private void Look()
-    {
-        float mouseX = lookInput.x * sensitivity;
-        float mouseY = lookInput.y * sensitivity;
+    // private void Look()
+    // {
+    //     float mouseX = lookInput.x * sensitivity;
+    //     float mouseY = lookInput.y * sensitivity;
 
-        // Apply rotation based on input
-        transform.Rotate(Vector3.up, mouseX);
-        transform.Rotate(Vector3.left, mouseY);
+    //     // Apply rotation based on input
+    //     transform.Rotate(Vector3.up, mouseX);
+    //     transform.Rotate(Vector3.left, mouseY);
 
-        // Clamp vertical rotation to prevent flipping
-        Vector3 currentRotation = transform.eulerAngles;
-        currentRotation.x = Mathf.Clamp(currentRotation.x, 0f, 0f);
-        transform.eulerAngles = currentRotation;
-    }
+    //     // Clamp vertical rotation to prevent flipping
+    //     Vector3 currentRotation = transform.eulerAngles;
+    //     currentRotation.x = Mathf.Clamp(currentRotation.x, 0f, 0f);
+    //     transform.eulerAngles = currentRotation;
+    // }
 
        public void OnFirePerformed(InputAction.CallbackContext context)
     {

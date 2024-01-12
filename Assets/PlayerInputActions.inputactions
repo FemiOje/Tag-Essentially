@@ -210,28 +210,6 @@
                 },
                 {
                     "name": "",
-                    "id": "fcf6f7a3-a06a-4209-9033-9d19db144f84",
-                    "path": "<Touchscreen>/touch0/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "68f96ca0-c93d-479e-a4d6-4b9f3c549aa7",
-                    "path": "<Mouse>/delta",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Look",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "34e98c67-b07d-4b0d-900c-cfd2fede7e24",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
