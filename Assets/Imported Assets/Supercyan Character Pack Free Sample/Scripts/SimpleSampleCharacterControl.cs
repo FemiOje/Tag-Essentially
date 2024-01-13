@@ -20,7 +20,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
     //private Vector2 lookInput;
-    private Vector3 instantiationOffset = new Vector3(0.0f, 0.0f, 0.5f);
+    private Vector3 instantiationOffset = new Vector3(0.0f, 3.0f, 0.5f);
     [SerializeField] GameObject projectile;
 
 
@@ -288,7 +288,7 @@ public class SimpleSampleCharacterControl : MonoBehaviour
             Vector3 adjustedOffset = playerForward * instantiationOffset.z;
 
             // Instantiate the projectile with the adjusted offset
-            Instantiate(projectile, transform.position + adjustedOffset, transform.rotation);
+            Instantiate(projectile, transform.position + adjustedOffset, projectile.transform.rotation);
         }
     }
 }

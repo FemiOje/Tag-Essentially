@@ -7,13 +7,17 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] Transform player;
 
-    void Update()
+    void FixedUpdate()
     {
         MoveForward();
     }
 
     void MoveForward()
     {
-        transform.Translate(player.forward * 10.0f * Time.deltaTime);
+        transform.Translate(transform.forward * 10.0f * Time.deltaTime, Space.Self);
+    }
+
+    private void OnCollisionEnter(Collision other) {
+        Destroy(gameObject);
     }
 }
