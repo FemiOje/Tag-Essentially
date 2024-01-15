@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] Transform player;
+    private float projectileSpeed = 10.0f;
+    [SerializeField] private Transform player;
 
     void FixedUpdate()
     {
@@ -14,7 +15,7 @@ public class Projectile : MonoBehaviour
 
     void MoveForward()
     {
-        transform.Translate(transform.forward * 10.0f * Time.deltaTime, Space.Self);
+        transform.Translate(transform.forward * projectileSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter() {
