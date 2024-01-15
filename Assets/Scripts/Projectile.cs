@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
         transform.Translate(transform.forward * 10.0f * Time.deltaTime, Space.Self);
     }
 
-    private void OnCollisionEnter(Collision other) {
+    private void OnCollisionEnter() {
         Destroy(gameObject);
     }
 }
