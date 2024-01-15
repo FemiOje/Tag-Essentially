@@ -7,6 +7,7 @@ public class Zombie : Enemy
 {
     protected override void Start()
     {
+        _animator.SetTrigger("zombieWalk");
     }
     protected override void Update()
     {
