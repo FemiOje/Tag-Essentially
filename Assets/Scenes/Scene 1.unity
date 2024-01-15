@@ -5443,6 +5443,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 81909291}
+    - target: {fileID: 856573586, guid: 28f88c8215bd10c469a0d0ce4a66d9bc, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6102759760180775707, guid: 28f88c8215bd10c469a0d0ce4a66d9bc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5490,6 +5494,10 @@ PrefabInstance:
     - target: {fileID: 7127512057113049352, guid: 28f88c8215bd10c469a0d0ce4a66d9bc, type: 3}
       propertyPath: m_Name
       value: SimpleSkeleton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127512057113049352, guid: 28f88c8215bd10c469a0d0ce4a66d9bc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28f88c8215bd10c469a0d0ce4a66d9bc, type: 3}
@@ -8313,6 +8321,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 81909291}
+    - target: {fileID: 2032620029, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8360,6 +8372,10 @@ PrefabInstance:
     - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Name
       value: Zombie1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
