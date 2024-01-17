@@ -17,11 +17,12 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     }
 
     [SerializeField] private float sensitivity = 2.0f;
+    [SerializeField] GameObject bullet;
+    [SerializeField] private Transform bulletSpawnPoint;
 
     private PlayerInputActions playerInputActions;
     //private Vector2 lookInput;
     private Vector3 instantiationOffset = new Vector3(0.0f, 3.0f, 0.5f);
-    [SerializeField] GameObject projectile;
 
 
 
@@ -277,18 +278,12 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     //     transform.eulerAngles = currentRotation;
     // }
 
-       public void OnFirePerformed(InputAction.CallbackContext context)
+    public void OnFirePerformed(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            // Calculate the forward direction of the player
-            Vector3 playerForward = transform.forward;
-
-            // Adjust the instantiation offset based on player's forward direction
-            Vector3 adjustedOffset = playerForward * instantiationOffset.z;
-
-            // Instantiate the projectile with the adjusted offset
-            Instantiate(projectile, transform.position + adjustedOffset, projectile.transform.rotation);
+            // Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+            Instantiate(bullet, bulletSpawnPoint.position, bullet.transform.rotation);
         }
     }
 }

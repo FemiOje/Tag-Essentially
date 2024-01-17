@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    //[SerializeField] GameObject projectile;
     private Rigidbody _rigidbody;
     [SerializeField] public int health;
     [SerializeField] public int speed;

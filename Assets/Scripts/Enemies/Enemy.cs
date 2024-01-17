@@ -74,11 +74,9 @@ public abstract class Enemy : MonoBehaviour
         _animator.SetTrigger("walkToAttack");
 
         playerRb.velocity = Vector3.zero;
-        playerRb.AddExplosionForce(10.0f, transform.position, 3.0f, 1.0f, ForceMode.Impulse);
+        playerRb.AddExplosionForce(15.0f, transform.position, 3.0f, 1.0f, ForceMode.Impulse);
 
         player.health -= damagePoints;
-        Debug.Log(player.health);
-
         _animator.SetTrigger("attackToWalk");
     }
 
@@ -93,7 +91,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected IEnumerator DestroyEnemy()
     {
-        _animator.ResetTrigger("zombieWalk");
+        //_animator.ResetTrigger("zombieWalk");
         _animator.SetTrigger("fallBackward");
         yield return new WaitForSeconds(3);
         Destroy(gameObject);

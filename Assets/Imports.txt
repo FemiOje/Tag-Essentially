@@ -25,3 +25,7 @@
 6. Level Design:
 	Low Poly FPS Map Lite by JustCreate
 	Asset Store: https://assetstore.unity.com/packages/3d/environments/low-poly-fps-map-lite-258453
+
+7. Bullet Prefab:
+	Weapon Pack by KenneyNL
+	Link: https://kenney.nl/assets/weapon-pack

@@ -1,24 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using AutoLevel.Examples;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private float projectileSpeed = 10.0f;
-    [SerializeField] private Transform player;
+    [SerializeField] private float speed;
 
-    void FixedUpdate()
+    void Start()
     {
-        MoveForward();
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = transform.forward * speed;
+
+        transform.rotation = Quaternion.Euler(transform.rotation.x, 90.0f, transform.rotation.z);
     }
 
-    void MoveForward()
+    private void OnCollisionEnter()
     {
-        transform.Translate(transform.forward * projectileSpeed * Time.deltaTime);
-    }
-
-    private void OnCollisionEnter() {
         Destroy(gameObject);
     }
 }
