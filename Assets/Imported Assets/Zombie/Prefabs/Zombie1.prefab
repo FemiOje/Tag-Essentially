@@ -1794,8 +1794,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7850223, z: 1}
-  m_Center: {x: 0, y: 0.87678814, z: 0}
+  m_Size: {x: 0.71661043, y: 1.7850223, z: 0.5780201}
+  m_Center: {x: 0.016005278, y: 0.87678814, z: 0.02596569}
 --- !u!114 &136714589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1810,6 +1810,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   speed: 10
+  explosionForce: 15
+  explosionRadius: 3
   damagePoints: 2
   player: {fileID: 0}
   playerTransform: {fileID: 0}
@@ -1822,7 +1824,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4493914613880827488}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.33
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50

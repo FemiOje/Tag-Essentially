@@ -16,13 +16,11 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         Direct
     }
 
-    [SerializeField] private float sensitivity = 2.0f;
+    // [SerializeField] private float sensitivity = 2.0f;
     [SerializeField] GameObject bullet;
     [SerializeField] private Transform bulletSpawnPoint;
-
     private PlayerInputActions playerInputActions;
     //private Vector2 lookInput;
-    private Vector3 instantiationOffset = new Vector3(0.0f, 3.0f, 0.5f);
 
 
 
@@ -34,7 +32,6 @@ public class SimpleSampleCharacterControl : MonoBehaviour
         if (!m_rigidBody) { gameObject.GetComponent<Animator>(); }
 
     }
-
     private void OnEnable()
     {
         playerInputActions.Player.Enable();
@@ -282,8 +279,12 @@ public class SimpleSampleCharacterControl : MonoBehaviour
     {
         if (context.performed)
         {
-            // Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
-            Instantiate(bullet, bulletSpawnPoint.position, bullet.transform.rotation);
+            // Vector3 playerForward = transform.forward;
+            // Vector3 playerForward = playerPosition.forward;
+
+            Instantiate(bullet, bulletSpawnPoint.position, transform.rotation);
+            // bulletRb.velocity = playerForward * 20.0f;
+            // Instantiate(bullet, bulletSpawnPoint.position, bullet.transform.rotation);
         }
     }
 }

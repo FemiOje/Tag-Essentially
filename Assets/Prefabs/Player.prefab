@@ -94,18 +94,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2741965042949568405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29fe4477e2237d3438d7181026458317, type: 3}
+  m_Script: {fileID: 11500000, guid: ba158ff05cf30224f94bfdddec8e7635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckHeight: 0.05
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 64
-  disableGCTime: 0.025
-  moveSpeed: 6
-  jumpPower: 13
-  jumpFallGravityModifier: 2
-  gravityScale: 1
+  sensitivity: 2
+  bullet: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
+  m_moveSpeed: 2
+  m_turnSpeed: 200
+  m_jumpForce: 4
+  m_animator: {fileID: 0}
+  m_rigidBody: {fileID: 0}
+  m_controlMode: 1
 --- !u!114 &2741965042949568414
 MonoBehaviour:
   m_ObjectHideFlags: 0

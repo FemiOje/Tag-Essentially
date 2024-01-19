@@ -2,13 +2,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.TestTools;
 
 public class GameManager : MonoBehaviour
 {
     public bool isGameOver;
-    public Player player;
+    [SerializeField] private Player player;
+    public GameManager singleton;
 
-
+    private void Awake()
+    {
+        if (singleton == null)
+        {
+            singleton = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         isGameOver = false;
@@ -16,9 +29,12 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (player.health <= 0)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
-            PlayGameOverSequence();
+            if (player.health <= 0)
+            {
+                PlayGameOverSequence();
+            }
         }
     }
 
@@ -36,5 +52,15 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         Debug.Log("Game over");
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(1);
+        // SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCount);
+    }
+
+    public void QuitGame(){
+        Application.Quit(); // remember to cater for built version
     }
 }

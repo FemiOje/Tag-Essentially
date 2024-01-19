@@ -9,6 +9,8 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int health;
     [SerializeField] protected int speed;
+    [SerializeField] protected float explosionForce = 15.0f;
+    [SerializeField] protected float explosionRadius = 3.0f;
     [SerializeField] protected int damagePoints;
     protected NavMeshAgent agent;
     [SerializeField] protected Player player;
@@ -74,7 +76,7 @@ public abstract class Enemy : MonoBehaviour
         _animator.SetTrigger("walkToAttack");
 
         playerRb.velocity = Vector3.zero;
-        playerRb.AddExplosionForce(15.0f, transform.position, 3.0f, 1.0f, ForceMode.Impulse);
+        playerRb.AddExplosionForce(explosionForce, transform.position, explosionRadius, 1.0f, ForceMode.Impulse);
 
         player.health -= damagePoints;
         _animator.SetTrigger("attackToWalk");
@@ -91,6 +93,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected IEnumerator DestroyEnemy()
     {
+        Debug.Log("Destroying enemy...");
         //_animator.ResetTrigger("zombieWalk");
         _animator.SetTrigger("fallBackward");
         yield return new WaitForSeconds(3);
